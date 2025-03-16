@@ -44,7 +44,8 @@
 
         .profile-header {
             position: relative;
-            margin-bottom: 80px;
+            margin-bottom: 0;
+            padding-bottom: 24px;
         }
 
         .profile-background {
@@ -53,10 +54,16 @@
             width: 100%;
         }
 
+        .profile-content {
+            position: relative;
+            margin-top: -75px;
+            display: flex;
+            padding: 0 24px;
+            gap: 24px;
+        }
+
         .profile-image {
-            position: absolute;
-            bottom: -75px;
-            left: 24px;
+            flex-shrink: 0;
             width: 150px;
             height: 150px;
             border: 4px solid var(--background-primary);
@@ -73,7 +80,8 @@
         }
 
         .profile-info {
-            padding: 0 24px;
+            flex-grow: 1;
+            padding-top: 75px;
         }
 
         .name {
@@ -185,14 +193,24 @@
                 padding: 12px;
             }
 
+            .profile-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-top: -60px;
+            }
+
             .profile-image {
                 width: 120px;
                 height: 120px;
-                bottom: -40px;
             }
 
             .profile-info {
-                padding-top: 60px;
+                padding-top: 20px;
+            }
+
+            .location {
+                justify-content: center;
             }
 
             .skills-grid {
@@ -206,17 +224,19 @@
         <div class="profile-card">
             <div class="profile-header">
                 <div class="profile-background"></div>
-                <div class="profile-image">
-                    <img src="images/Tanmoy_Profile.jpg" alt="Tanmoy Santra">
-                </div>
-                <div class="profile-info">
-                    <h1 class="name">Tanmoy Santra</h1>
-                    <div class="headline">Data Engineer at Newsec | Azure Cloud Expert | AI/ML Solutions Architect</div>
-                    <div class="location">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-                        </svg>
-                        Stockholm, Sweden
+                <div class="profile-content">
+                    <div class="profile-image">
+                        <img src="images/Tanmoy_Profile.jpg" alt="Tanmoy Santra">
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="name">Tanmoy Santra</h1>
+                        <div class="headline">Data Engineer at Newsec | Azure Cloud Expert | AI/ML Solutions Architect</div>
+                        <div class="location">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                            Stockholm, Sweden
+                        </div>
                     </div>
                 </div>
             </div>
