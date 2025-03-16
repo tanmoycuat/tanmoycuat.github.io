@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanmoy Santra - Data Engineer</title>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #f5f5f5;
+            --text-color: #333;
+            --accent-color: #e6f0ff;
+            --border-color: #ddd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .profile-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .profile-info {
+            flex: 2;
+            padding-right: 20px;
+        }
+        
+        .profile-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 200px;
+        }
+        
+        .profile-image img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .skill-item {
+            background-color: var(--accent-color);
+            padding: 12px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--border-color);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin-left: 20px;
+        }
+        
+        .experience-item {
+            padding: 20px 40px 20px 60px;
+            position: relative;
+            background-color: white;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            left: 12px;
+            top: 25px;
+            z-index: 1;
+        }
+        
+        .date {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .position {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 10px 0 5px;
+        }
+        
+        .company {
+            font-weight: 500;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .responsibilities {
+            margin-top: 15px;
+        }
+        
+        .responsibilities ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        
+        .responsibilities li {
+            margin-bottom: 8px;
+        }
+        
+        .education-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .education-date {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .degree {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 10px 0 5px;
+        }
+        
+        .institution {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .award-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .award-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .award-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+            }
+            .profile-info {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            .timeline::after {
+                left: 31px;
+            }
+            .experience-item {
+                padding: 15px 15px 15px 60px;
+            }
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container profile-container">
+            <div class="profile-info">
+                <h1>Tanmoy Santra</h1>
+                <h2>Data Engineer</h2>
+                <p>Skilled Data Engineer bringing more than 14 years' experience in the design and administration of databases, as well as key skills in the modeling and warehousing of data, development of enterprise architectures and the strategic collection and use of business intelligence.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                        </svg>
+                        Solna, Stockholm, 17152
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                        </svg>
+                        467-214-52356
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                        </svg>
+                        tanmoycuat@gmail.com
+                    </div>
+                </div>
+            </div>
+            <div class="profile-image">
+                <img src="images\Tanmoy_Profile.jpg" alt="Tanmoy Santra" />
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="skills">
+            <h3 class="section-title">Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Azure Data Factory</div>
+                <div class="skill-item">AWS RedShift</div>
+                <div class="skill-item">Azure Synapse Analytics</div>
+                <div class="skill-item">Azure SQL Databases</div>
+                <div class="skill-item">Azure Analysis Services</div>
+                <div class="skill-item">Azure Databricks</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">Power BI</div>
+                <div class="skill-item">ETL/ELT</div>
+                <div class="skill-item">Data Warehousing</div>
+                <div class="skill-item">Delta Lake</div>
+                <div class="skill-item">Business Intelligence</div>
+                <div class="skill-item">AI Solution Design</div>
+                <div class="skill-item">ML Model Implementation</div>
+                <div class="skill-item">Predictive Analytics</div>
+                <div class="skill-item">NLP Integration</div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h3 class="section-title">Professional Experience</h3>
+            <div class="timeline">
+                <div class="experience-item">
+                    <div class="date">April 2022 - Present</div>
+                    <div class="position">Data Engineer</div>
+                    <div class="company">Newsec, Stockholm, Sweden</div>
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Working in the field of Data Warehouse and Business Intelligence for different clients</li>
+                            <li>Designing and implementing data solutions using Azure cloud services</li>
+                            <li>Developing and maintaining data pipelines and ETL processes</li>
+                            <li>Designing and implementing AI-driven analytics solutions for business insights</li>
+                            <li>Creating predictive models using machine learning technologies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="date">September 2021 - November 2021</div>
+                    <div class="position">Lead Data Engineer</div>
+                    <div class="company">PMI, Bangalore, Karnataka</div>
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Developed, implemented, supported and maintained data analytics protocols, standards and documentation</li>
+                            <li>Analyzed complex data and identified anomalies, trends and risks to provide useful insights</li>
+                            <li>Designed and developed Delta lake and analytical data structures</li>
+                            <li>Compiled, cleaned and manipulated data for proper handling</li>
+                            <li>Contributed to internal activities for overall process improvements, efficiencies and innovation</li>
+                            <li>Integrated AI-based anomaly detection systems within data pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="date">May 2020 - March 2021</div>
+                    <div class="position">Data Engineer</div>
+                    <div class="company">Sodexo, Bangalore, Karnataka</div>
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Generated detailed studies on potential third-party data handling solutions</li>
+                            <li>Designed compliance frameworks for multi-site data warehousing efforts</li>
